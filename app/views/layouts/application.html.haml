@@ -1,0 +1,48 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Insectagram
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyD_A18vP4vJ1bndL7iADS5vRjU0uD4Ht0c&callback=initMap"}
+
+    -# :javascript
+    -#   window.onload = function(){
+    -#     initMap(35.446806, 139.636163); 
+    -#   };
+    -#   let map
+    -#   function initMap() {    
+    -#     var geocoder = new google.maps.Geocoder()
+    -#     var map = new google.maps.Map(document.getElementById('map'), {
+    -#       center: {lat: 40.7828, lng:-73.9653},
+    -#       zoom: 12,
+    -#       mapTypeId: google.maps.MapTypeId.ROADMAP
+    -#     });
+    -#     var marker = new google.maps.Marker({
+    -#       position:  {lat: 40.7828, lng:-73.9653},
+    -#       map: map
+    -#     });
+    -#   }
+    -#   let geocoder
+    -#   function codeAddress(){
+    -#     var geocoder = new google.maps.Geocoder()
+    -#     var inputAddress = document.getElementById('address').value;
+    -#       geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    -#         if (status == 'OK') {
+    -#           map.setCenter(results[0].geometry.location);
+    -#           var marker = new google.maps.Marker({
+    -#             map: map,
+    -#             position: results[0].geometry.location
+    -#           });
+    -#         } else {
+    -#           alert('該当する結果がありませんでした：' + status);
+    -#         }
+    -#       });   
+    -#   }
+      
+    
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = yield

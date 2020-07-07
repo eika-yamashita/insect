@@ -1,0 +1,2 @@
+class Ordo < ApplicationRecord
+end
