@@ -6,10 +6,10 @@
     
 .posts
   - @posts.each do |post|
-    =link_to post do
-      .post
+    .post
+      =link_to post do
         =image_tag post.image
-        .post-info
-          %p #{post.name} 
-          %span #{post.text} 
+      .post-info
+        %p #{post.name} 
+        %span #{post.text} 
       

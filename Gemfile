@@ -68,3 +68,5 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'ransack'
 gem 'geocoder'
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
